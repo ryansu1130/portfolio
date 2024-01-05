@@ -1,0 +1,361 @@
+/* desgin a page with 16--px */
+/* design a page where only a phone can view */
+/* add media quiers */
+/* produce project details, will use the same template for all project */
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: Georgia, serif;
+  font-weight: 100;
+  overflow-x: hidden;
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+/* section 1 */
+/* --------------------------------------------------------------------------- */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
+
+.container .section {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  scroll-snap-align: start;
+  color: black;
+  /* font-size: clamp(20px, 4vw, 80px); */
+}
+
+.container .section:nth-child(1) {
+  background: pink;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(-45deg, #ee7752, #e7e13c, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 5s ease infinite;
+  color: black;
+  font-weight: bold;
+}
+
+.section .content p:nth-child(1) {
+  font-size: clamp(20px, 7vw, 120px);
+}
+
+.desc {
+  text-indent: 16px;
+  font-size: clamp(20px, 4vw, 60px);
+}
+
+.section .content p:nth-child(4) {
+  font-size: clamp(20px, 8vw, 120px);
+}
+
+#function {
+  color: #be07c1;
+}
+
+#Ryan {
+  color: #d1646b;
+}
+
+.log {
+  color: #b6941e;
+}
+
+/* CSS */
+/* button source : https://getcssscan.com/css-buttons-examples */
+.button-89 {
+  cursor: pointer;
+  --b: 3px; /* border thickness */
+  --s: 0.45em; /* size of the corner */
+  --color: #373b44;
+
+  padding: calc(0.5em + var(--s)) calc(0.9em + var(--s));
+  color: var(--color);
+  --_p: var(--s);
+  background: conic-gradient(
+      from 90deg at var(--b) var(--b),
+      #0000 90deg,
+      var(--color) 0
+    )
+    var(--_p) var(--_p) / calc(100% - var(--b) - 2 * var(--_p))
+    calc(100% - var(--b) - 2 * var(--_p));
+  transition: 0.3s linear, color 0s, background-color 0s;
+  outline: var(--b) solid #0000;
+  outline-offset: 0.6em;
+  font-size: 16px;
+
+  border: 0;
+
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+
+  margin-top: 2.5%;
+  font-size: clamp(30px, 2vw, 60px);
+}
+
+.button-89:hover,
+.button-89:focus-visible {
+  --_p: 0px;
+  outline-color: var(--color);
+  outline-offset: 0.05em;
+}
+
+.button-89:active {
+  background: var(--color);
+  color: #fff;
+}
+
+/* TEXT ANIMATION USING TYPEWRITER */
+.content p {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: 5px solid transparent; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  animation: typing 3s steps(30, end), blink-caret 0.5s step-end 7;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: black;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* section 2 */
+
+img {
+  height: 33%;
+  min-width: 100%;
+}
+
+.mainProjects p {
+  color: black;
+  font-size: clamp(20px, 6vw, 120px);
+  text-align: center;
+}
+
+.mainPanel {
+  /* background-color: #EFEA6B; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background: linear-gradient(-45deg, #ee7752, #e7e13c, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 5s ease infinite;
+}
+
+.projectPanel {
+  border: 1px solid black;
+  width: 350px;
+  height: 500px;
+  border-radius: 10px;
+  background-color: white;
+  min-height: 0px;
+  margin-top: 10px;
+}
+
+.projectTitle {
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.prjectDesciption {
+  width: 70%;
+  font-size: 1rem;
+  color: #666262;
+  text-align: center;
+  margin-top: 10px;
+  margin-left: 50px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #6bb3f6;
+}
+
+.projectSkill {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.skillsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 70%;
+  margin-left: 50px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #6bb3f6;
+}
+
+.skills {
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 5px;
+}
+
+.projectDetails {
+  padding: 12px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-left: 33%;
+  margin-top: 5%;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.projectDetails:hover {
+  box-shadow: 0 0.5em 0.5em -0.4em gray;
+  transform: translateY(-0.25em);
+}
+
+.mainContact {
+  font-size: clamp(20px, 4vw, 120px);
+  text-align: center;
+  margin-top: 20px;
+}
+
+@media (min-width: 1200px) {
+  .container .section:nth-child(2) {
+    background: white;
+    min-height: 0px;
+  }
+
+  .mainProjects p {
+    color: black;
+    font-size: clamp(20px, 6vw, 120px);
+    margin-left: 9rem;
+    margin-top: 3rem;
+    text-align: left;
+  }
+
+  .mainPanel {
+    background-color: #efea6b;
+    transform: rotate(-5deg);
+    background: linear-gradient(-45deg, #ee7752, #e7e13c, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 5s ease infinite;
+    border-radius: 10px;
+    max-width: 95%;
+    margin-left: 2.5%;
+    /* margin-top: 30px; */
+    height: 650px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .projectPanel {
+    border: 1px solid black;
+    width: 350px;
+    height: 500px;
+    border-radius: 20px;
+    transform: rotate(5deg);
+    background-color: white;
+    min-height: 0px;
+  }
+
+  .mainContact {
+    font-size: clamp(20px, 4vw, 120px);
+    text-align: right;
+    margin-top: -20px;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+
+#parg1 {
+  color: black;
+  font-size: clamp(40px, 4vw, 100px);
+  text-align: center;
+  margin-top: 5%;
+}
+
+#parg2 {
+  color: black;
+  width: 40%;
+  margin-left: 30%;
+  font-size: clamp(20px, 2vw, 100px);
+  text-align: center;
+  margin-top: 5%;
+}
+
+.contactContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 5%;
+}
+
+.contactMethod p {
+  text-align: center;
+}
+
+img {
+  max-width: 170px;
+  max-height: auto;
+}
+
+@media (min-width: 1000px) {
+  .contactContainer {
+    flex-direction: row;
+  }
+
+  img {
+    width: 170px;
+    max-height: auto;
+  }
+}
